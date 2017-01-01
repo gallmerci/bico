@@ -12,3 +12,15 @@ with reduction techniques from clustering theory.
 
 ----
 
+Applications
+=======================
+Massive Data Sets
+=======================
+Running k-means on a very large data set is even nowadays infeasible. BICO can reduce the amount of input points drastically
+such that running k-means on the resulting reduced data set is just a matter of seconds. BICO ensures that the solution
+is of similar quality as the solution on the original input set.
+
+Compression
+=======================
+BICO reduces a set of input points to a specified number of points while preserving the k-means solution quality as good
+as possible. Thus, BICO is a perfect tool to shrink the size of the data in order to reduce space or bandwidth.
