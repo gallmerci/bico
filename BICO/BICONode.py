@@ -81,3 +81,11 @@ class BICONode:
             f.write(str(self.cf) + "\n")
         for (key, node) in self.point_to_biconode.iteritems():
             node.output_cf(f)
+
+    def get_cf(self):
+        cur = []
+        if self.level > 0:
+            cur.append(np.insert(self.cf.center().p, 0, self.cf.size))
+        for (key, node) in self.point_to_biconode.iteritems():
+            cur = cur + node.get_cf()
+        return cur

@@ -16,7 +16,7 @@ def run_bico(n, d, size, p, file):
     with open(file, 'rb') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=',')
         for row in spamreader:
-            del row[-1]
+            # del row[-1]
             # print len(row)
             p = Point(np.array(map(float, row)))
             bico.insert_point(p)

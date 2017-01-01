@@ -1,14 +1,14 @@
 from BICONode import BICONode
 from collections import deque
 from ClusteringFeature import ClusteringFeature
-import numpy
+import numpy as np
 from math import sqrt
 
 
 class BICO:
     """ Base class for BICO applications """
 
-    def __init__(self, dim, n, p, coreset):
+    def __init__(self, dim, n, p, coreset, verbose=False):
         """
         :param dim:
             Dimension of input points
@@ -31,6 +31,7 @@ class BICO:
         self.buffer_phase = True
         self.buffer = []
         self.time = []
+        self.verbose = verbose
 
     def insert_point(self, point):
         """
@@ -48,12 +49,13 @@ class BICO:
                 for p in self.buffer:
                     for p2 in self.buffer:
                         d = p.p - p2.p
-                        dist = numpy.ma.inner(d, d)
+                        dist = np.ma.inner(d, d)
                         if dist == 0:
                             continue
                         if minDist == -1 or minDist > dist:
                             minDist = dist
-                print "Initial Threshold: " + str(16 * minDist)
+                if self.verbose:
+                    print "Initial Threshold: " + str(16 * minDist)
                 self.thresh = 16 * minDist
                 for p in self.buffer:
                     self.insert_point(p)
@@ -68,7 +70,8 @@ class BICO:
                 self.num_cfs = 0
                 self.thresh *= 2.0
                 self.root = BICONode(0, self.dim, self.p, self)
-                print "Rebuilding... Threshold: " + str(self.thresh)
+                if self.verbose:
+                    print "Rebuilding... Threshold: " + str(self.thresh)
                 while len(queue) > 0:
                     node1 = queue.pop()
                     for (key, node2) in node1.point_to_biconode.iteritems():
@@ -97,3 +100,12 @@ class BICO:
             None
         """
         self.root.output_cf(f)
+
+    def get_coreset(self):
+        """
+        Returns reduced data set
+        :return:
+            Returns coreset x (dim+1) dimensional numpy array where each row contains the weight / size (first column)
+            and the reference point of a clustering feature (last dim columns).
+        """
+        return np.vstack(self.root.get_cf())
