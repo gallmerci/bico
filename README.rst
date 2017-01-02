@@ -27,9 +27,9 @@ as possible. Thus, BICO is a perfect tool to shrink the size of the data in orde
 
 Getting Started
 =======================
-Have a look at `this example <https://github.com/gallmerci/bico/blob/master/examples/applications.ipynb>` for an
+Have a look at `this example <https://github.com/gallmerci/bico/blob/master/examples/applications.ipynb>`_ for an
 introduction on how to use this library and some visualizations presenting the results of the computed data reduction.
 
-Slides showing a more technical overview of BICO can be found `here <https://github.com/gallmerci/bico/blob/master/docs/BICO_ Technical Overview.pdf>`.
-If you are interested in the theoretical part of BICO, please feel free to check `Section 5.4 of this thesis <https://eldorado.tu-dortmund.de/handle/2003/34099>`
+Slides showing a more technical overview of BICO can be found `here <https://github.com/gallmerci/bico/blob/master/docs/BICO_Technical Overview.pdf>`_.
+If you are interested in the theoretical part of BICO, please feel free to check `Section 5.4 of this thesis <https://eldorado.tu-dortmund.de/handle/2003/34099>`_
 which contains a very detailed description of the algorithm including all proofs of theoretical guarantees.
