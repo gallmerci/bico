@@ -1,7 +1,7 @@
 BICO (BIrch using COresets)
 =======================
 
-This is a python implementation of the original `BICO <http://ls2-www.cs.uni-dortmund.de/bico/>`
+This is a python implementation of the original `BICO <http://ls2-www.cs.uni-dortmund.de/bico/>`_
 code.
 
 BICO is a fast streaming algorithm for the k-means problem. BICO reduces the
@@ -31,5 +31,5 @@ Have a look at `this example <https://github.com/gallmerci/bico/blob/master/exam
 introduction on how to use this library and some visualizations presenting the results of the computed data reduction.
 
 Slides showing a more technical overview of BICO can be found `here <https://github.com/gallmerci/bico/blob/master/docs/BICO_Technical Overview.pdf>`_.
-If you are interested in the theoretical part of BICO, please feel free to check `Section 5.4 of this thesis <https://eldorado.tu-dortmund.de/handle/2003/34099>`_
+If you are interested in the theoretical point of view of BICO, please feel free to check `Section 5.4 of this thesis <https://eldorado.tu-dortmund.de/handle/2003/34099>`_
 which contains a very detailed description of the algorithm including all proofs of theoretical guarantees.
