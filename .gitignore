@@ -1,0 +1,6 @@
+venv
+.idea
+__pycache__
+dist
+build
+bico.egg-info

@@ -1,0 +1,5 @@
+sklearn
+matplotlib
+numpy
+bico
+
